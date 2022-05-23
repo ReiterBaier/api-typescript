@@ -1,0 +1,26 @@
+{
+  "name": "api-project-integrations",
+  "version": "1.0.0",
+  "description": "Api RESTful com o objetivo de controlar projetos de integrações",
+  "main": "index.js",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/index.ts",
+    "build": "yarn build:clean&&yarn build:dist",
+    "build:clean": "rimraf ./dist",
+    "build:dist": "tsc --build tsconfig.build.json",
+    "install_service": "set NODE_ENV=development&& tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/service.ts"
+  },
+  "repository": "https://github.com/ReiterBaier/api-project-integrations.git",
+  "author": "Reiter Baier <91735552+ReiterBaier@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.35",
+    "express": "^4.18.1",
+    "node-windows": "1.0.0-beta.5"
+  }
+}
