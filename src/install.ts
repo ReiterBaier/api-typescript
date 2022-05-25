@@ -4,8 +4,8 @@ import { EventLogger } from 'node-windows'
 const serviceLog = new EventLogger()
 
 const options: ServiceConfig = {
-  name: 'Intergalactic API',
-  description: 'API REST',
+  name: 'FSIS-Suportfy',
+  description: 'API para controle de projetos',
   script: './dist/src/index.js'
 }
 
@@ -15,8 +15,8 @@ export const srv = () => {
 
   srv.on('install', () => {
     srv.start()
-    console.log('Intergalactic API service installed!')
-    serviceLog.info('Intergalactic API service installed!')
+    console.log('Suportfy service installed!')
+    serviceLog.info('Suportfy service installed!')
   })
 
   return srv
