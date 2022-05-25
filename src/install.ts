@@ -4,7 +4,7 @@ import { EventLogger } from 'node-windows'
 const serviceLog = new EventLogger()
 
 const options: ServiceConfig = {
-  name: 'FSIS-Suportfy',
+  name: 'Suportfy',
   description: 'API para controle de projetos',
   script: './dist/src/index.js'
 }

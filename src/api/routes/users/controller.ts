@@ -1,4 +1,4 @@
-import { JsonController, Post, Param, Header, HttpCode, OnUndefined, Get } from 'routing-controllers'
+import { JsonController, Post, Param, HttpCode, OnUndefined } from 'routing-controllers'
 import { AuthUser, ResponseAuthUser } from './service'
 
 @JsonController('/suportfy')
