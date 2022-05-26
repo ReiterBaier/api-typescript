@@ -1,17 +1,14 @@
-import { IsNotEmpty, IsString } from 'class-validator'
+import { AppDatasource } from '../../../database/databaseConnection'
+import { User } from '../../../entities/users'
+import { FindOneOptions } from 'typeorm'
 
-export class AuthUser {
-  @IsString()
-  @IsNotEmpty()
-  user: string
 
-  @IsString()
-  @IsNotEmpty()
-  password: string
+export const findOne = async (username: string, password: string) => {
+  const param: FindOneOptions = { where: [{ username: username }, {password: password}] }
 
+  const user: User = await AppDatasource.manager.findOne(User, param)
+
+  return user.token 
 }
 
-export class ResponseAuthUser {
-  @IsString()
-  token: string
-}
+

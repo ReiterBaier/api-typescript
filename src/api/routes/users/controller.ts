@@ -1,12 +1,14 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get } from 'routing-controllers'
-import { AuthUser, ResponseAuthUser } from './service'
+import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
+import { findOne } from './service'
 
 @JsonController('/suportfy')
 export class UserAuthentication {
-  @Get('/auth')
+  @Post('/auth')
   @HttpCode(200)
   @OnUndefined(400)
-  postUser(@Param('user') user: string, @Param('password') password:string) {
-    return new AuthUser()
+  postUser(@HeaderParam('username') username: string, @HeaderParam('password') password:string) {
+    return findOne(username, password)
   }
 }
+
+

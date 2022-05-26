@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm'
+import { Entity, Column, PrimaryColumn, ObjectIdColumn, ObjectLiteral } from 'typeorm'
 
 @Entity('user')
 export class User {
@@ -6,11 +6,11 @@ export class User {
   id: number
 
   @Column()
-  user: string
+  username: string
 
   @Column()
   password: string
 
   @Column()
-  token: string
+  token: string 
 }
