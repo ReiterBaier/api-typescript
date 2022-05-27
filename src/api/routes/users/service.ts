@@ -8,7 +8,7 @@ export const findOne = async (username: string, password: string) => {
 
   const user: User = await AppDatasource.manager.findOne(User, param)
 
-  return user.token 
+  return {token: user.token} 
 }
 
 
