@@ -8,8 +8,15 @@ const controllerPath = path.resolve(__dirname, 'api', 'routes', '**', 'controlle
 const serverConfigs: RoutingControllersOptions = {
   cors: '*',
   defaultErrorHandler: true,
-  controllers: [controllerPath]
+  controllers: [controllerPath],
+  defaults: {
+    paramOptions: {
+      required: true
+    }
+  }
 }
+
+
 
 const app: Express = createExpressServer(serverConfigs)
 
