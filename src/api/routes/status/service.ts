@@ -1,16 +1,15 @@
 import { AppDatasource } from '../../../database/databaseConnection'
-import { Types } from '../../../entities/types'
+import { Status } from '../../../entities/status'
 import { FindOneOptions } from 'typeorm'
 
 export const findAll = async () => {
-    return AppDatasource.manager.find(Types)
+    return AppDatasource.manager.find(Status)
 }
-
 
 export const findWithFilter = async (focus: string) => {
     const param: FindOneOptions = { where: [{ focus: focus }] }
   
-    const types: Types = await AppDatasource.manager.find(Types, param)
+    const status: Status = await AppDatasource.manager.find(Status, param)
   
-    return types
+    return status
   }

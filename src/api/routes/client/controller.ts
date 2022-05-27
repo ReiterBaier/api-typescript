@@ -1,9 +1,9 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findWithFilter } from './service'
+import { findAll, findOne } from './service'
 
 @JsonController('/suportfy')
-export class getAllTasks {
-  @Get('/tasks')
+export class getAllClients {
+  @Get('/client')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
@@ -11,14 +11,16 @@ export class getAllTasks {
   }
 }
 
-
 @JsonController('/suportfy')
-export class getTaskById {
-  @Get('/tasks/:id')
+export class getClientById {
+  @Get('/client/:id')
   @HttpCode(200)
   @OnUndefined(400)
   getWithFilter(@Param('id') id: string) {
-    return findWithFilter(id)
+    return findOne(id)
   }
 }
+
+
+
 

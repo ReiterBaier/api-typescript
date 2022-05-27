@@ -8,4 +8,7 @@ export class Status {
   @Column()
   name: string
 
+  @Column()
+  focus: string
+
 }

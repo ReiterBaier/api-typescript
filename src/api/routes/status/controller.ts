@@ -2,8 +2,8 @@ import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyPara
 import { findAll, findWithFilter } from './service'
 
 @JsonController('/suportfy')
-export class getAllTasks {
-  @Get('/tasks')
+export class getAllStatus {
+  @Get('/status')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
@@ -11,14 +11,16 @@ export class getAllTasks {
   }
 }
 
-
 @JsonController('/suportfy')
-export class getTaskById {
-  @Get('/tasks/:id')
+export class getStatusByFocus {
+  @Get('/status/:focus')
   @HttpCode(200)
   @OnUndefined(400)
-  getWithFilter(@Param('id') id: string) {
-    return findWithFilter(id)
+  getWithFilter(@Param('focus') focus: string) {
+    return findWithFilter(focus)
   }
 }
+
+
+
 
