@@ -1,5 +1,5 @@
 import { AppDatasource } from '../../../database/databaseConnection'
-import { User } from '../../../entities/users'
+import { User } from '../../../entities/user'
 import { FindOneOptions } from 'typeorm'
 
 
