@@ -33,5 +33,5 @@ export class Projects {
   previous_date: string 
 
   @Column()
-  estimate_date: string 
+  estimate_time: string 
 }

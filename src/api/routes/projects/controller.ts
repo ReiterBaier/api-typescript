@@ -2,20 +2,19 @@ import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyPara
 import { findAll, findOne } from './service'
 
 @JsonController('/suportfy')
-export class getAllTasks {
-  @Get('/tasks')
+export class getAllProjects {
+  @Get('/projects')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
     return findAll()
   }
-
 }
 
 
 @JsonController('/suportfy')
-export class getTaskById {
-  @Get('/tasks/:id')
+export class getProjectsById {
+  @Get('/projects/:id')
   @HttpCode(200)
   @OnUndefined(400)
   getWithFilter(@Param('id') id: string) {
@@ -23,11 +22,3 @@ export class getTaskById {
   }
 }
 
-/*
-@Post('')
-@HttpCode(201)
-@OnUndefined(500)
-post(@Body({ validate: true }) fromTosRequest: FromToRequest) {
-  return create(fromTosRequest)
-}
-*/
