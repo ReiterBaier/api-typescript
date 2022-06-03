@@ -1,6 +1,7 @@
 import { AppDatasource } from '../../../database/databaseConnection'
 import { Status } from '../../../entities/status'
 import { FindOneOptions } from 'typeorm'
+import { StatusRequest } from './request'
 
 export const findAll = async () => {
     return AppDatasource.manager.find(Status)
@@ -24,12 +25,13 @@ export const findWithFilter = async (focus: string) => {
       res.status(400).send({error: error.message})
     }
   }
+  */
 
 
-
- export const create = async (fromToRequest: FromToRequest, connection?: Connection) => {
+ export const create = async (fromToRequest: StatusRequest) => {
   const fromTo = new FromTo()
-  return save(fromTo, fromToRequest, connection)
+  return save(fromTo, fromToRequest, 
+    )
 }
 
   

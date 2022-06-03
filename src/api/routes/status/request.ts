@@ -1,9 +1,12 @@
-import { ArrayUnique, IsArray, IsBoolean, IsInt, IsOptional, IsPositive } from 'class-validator'
+import { IsOptional } from 'class-validator'
 
 
 export class StatusRequest {
 
+  @IsOptional()
   name?: string
 
+  @IsOptional()
   showName?: string
 }
+
