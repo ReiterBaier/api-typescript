@@ -1,7 +1,7 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
 import { findAll, findWithFilter } from './service'
 
-@JsonController('/suportfy')
+@JsonController('/suportfly')
 export class getAllStatus {
   @Get('/status')
   @HttpCode(200)
@@ -11,7 +11,7 @@ export class getAllStatus {
   }
 }
 
-@JsonController('/suportfy')
+@JsonController('/suportfly')
 export class getStatusByFocus {
   @Get('/status/:focus')
   @HttpCode(200)

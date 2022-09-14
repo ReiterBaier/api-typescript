@@ -1,7 +1,7 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
 import { findAll, findOne } from './service'
 
-@JsonController('/suportfy')
+@JsonController('/suportfly')
 export class getAllPlataforms {
   @Get('/plataform')
   @HttpCode(200)
@@ -11,7 +11,7 @@ export class getAllPlataforms {
   }
 }
 
-@JsonController('/suportfy')
+@JsonController('/suportfly')
 export class getPlataformById {
   @Get('/plataform/:id')
   @HttpCode(200)

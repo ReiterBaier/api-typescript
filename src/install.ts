@@ -4,7 +4,7 @@ import { EventLogger } from 'node-windows'
 const serviceLog = new EventLogger()
 
 const options: ServiceConfig = {
-  name: 'Suportfy',
+  name: 'Suportfly',
   description: 'API para controle de projetos',
   script: './dist/src/index.js'
 }
@@ -15,8 +15,8 @@ export const srv = () => {
 
   srv.on('install', () => {
     srv.start()
-    console.log('Suportfy service installed!')
-    serviceLog.info('Suportfy service installed!')
+    console.log('Suportfly service installed!')
+    serviceLog.info('Suportfly service installed!')
   })
 
   return srv

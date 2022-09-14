@@ -28,11 +28,3 @@ export const findWithFilter = async (focus: string) => {
   */
 
 
- export const create = async (fromToRequest: StatusRequest) => {
-  const fromTo = new FromTo()
-  return save(fromTo, fromToRequest, 
-    )
-}
-
-  
-*/

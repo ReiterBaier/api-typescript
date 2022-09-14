@@ -1,7 +1,7 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
 import { findOne } from './service'
 
-@JsonController('/suportfy')
+@JsonController('/suportfly')
 export class UserAuthentication {
   @Post('/auth')
   @HttpCode(200)

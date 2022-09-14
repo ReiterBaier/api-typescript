@@ -13,8 +13,8 @@ var srv = function () {
     var srv = new node_windows_1.Service(options);
     srv.on('install', function () {
         srv.start();
-        console.log('Suportfy service installed!');
-        serviceLog.info('Suportfy service installed!');
+        console.log('Suportfly service installed!');
+        serviceLog.info('Suportfly service installed!');
     });
     return srv;
 };

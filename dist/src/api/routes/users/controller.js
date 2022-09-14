@@ -32,7 +32,7 @@ var UserAuthentication = /** @class */ (function () {
         __metadata("design:returntype", void 0)
     ], UserAuthentication.prototype, "postUser", null);
     UserAuthentication = __decorate([
-        (0, routing_controllers_1.JsonController)('/suportfy')
+        (0, routing_controllers_1.JsonController)('/suportfly')
     ], UserAuthentication);
     return UserAuthentication;
 }());
