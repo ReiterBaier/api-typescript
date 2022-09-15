@@ -36,19 +36,25 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findOne = void 0;
+exports.findOne = exports.findAll = void 0;
 var databaseConnection_1 = require("../../../database/databaseConnection");
-var user_1 = require("../../../entities/user");
-var findOne = function (username, password) { return __awaiter(void 0, void 0, void 0, function () {
-    var param, user;
+var client_1 = require("../../../entities/client");
+var findAll = function () { return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+        return [2 /*return*/, databaseConnection_1.AppDatasource.manager.find(client_1.Client)];
+    });
+}); };
+exports.findAll = findAll;
+var findOne = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+    var param, client;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                param = { where: [{ username: username, password: password }] };
-                return [4 /*yield*/, databaseConnection_1.AppDatasource.manager.findOne(user_1.User, param)];
+                param = { where: [{ id: id }] };
+                return [4 /*yield*/, databaseConnection_1.AppDatasource.manager.findOne(client_1.Client, param)];
             case 1:
-                user = _a.sent();
-                return [2 /*return*/, { id: user.id }];
+                client = _a.sent();
+                return [2 /*return*/, client];
         }
     });
 }); };

@@ -5,7 +5,7 @@ var node_windows_1 = require("node-windows");
 var node_windows_2 = require("node-windows");
 var serviceLog = new node_windows_2.EventLogger();
 var options = {
-    name: 'Suportfy',
+    name: 'Suportfly',
     description: 'API para controle de projetos',
     script: './dist/src/index.js'
 };
