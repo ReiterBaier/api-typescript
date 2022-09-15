@@ -1,5 +1,5 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findOne, findAll } from './service'
+import { JsonController, Param, HttpCode, OnUndefined, Get} from 'routing-controllers'
+import { findOne } from './service'
 
 
 @JsonController('/suportfly')
@@ -8,7 +8,7 @@ export class getConexaoByToken {
   @HttpCode(200)
   @OnUndefined(400)
   getWithFilter(@Param('integrationId') integrationId: string) {
-    return findAll(integrationId)
+    return findOne(integrationId)
   }
 }
 

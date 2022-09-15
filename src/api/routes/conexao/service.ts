@@ -8,14 +8,6 @@ export const findOne = async (integrationId: string) => {
   
     const conexao: Conexoes = await AppDatasource.manager.findOne(Conexoes, param)
   
-    return [conexao]
+    return conexao
   }
 
-
-  export const findAll = async (integrationId: string) => {
-    const param: FindOneOptions = { where: [{ integrationId: integrationId }] }
-  
-    const conexao: Conexoes = await AppDatasource.manager.findOne(Conexoes, param)
-  
-    return [conexao]
-  }
