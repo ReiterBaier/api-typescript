@@ -5,7 +5,7 @@ import { Stage } from '../../../entities/stage'
 export const findWithFilter = async (integrationId: string) => {
     const param = { where: [{ integrationId: integrationId }] }
   
-    const stage: Stage = await AppDatasource.manager.find(Stage, param)
+    const stage: Stage[] = await AppDatasource.manager.find(Stage, param)
 
     return stage
 
