@@ -7,14 +7,14 @@ export const findAll = async () => {
 
   const tasks: Task[] = await AppDatasource.manager.find(Task)
 
-  const convertTask = tasks.map((task) => {
+  const convertedTask = tasks.map((task) => {
 
     const convertDescription = Buffer.from(task.description).toString('utf-8')
 
     return ({...task, description: convertDescription})
   });
   
-  return  convertTask
+  return  convertedTask
 }
 
 
