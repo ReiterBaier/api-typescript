@@ -10,11 +10,29 @@ export const findAll = async () => {
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
   
-    const tasks: Task = await AppDatasource.manager.findOne(Task, param)
+    const task: Task = await AppDatasource.manager.findOne(Task, param)
+
+    const convertDescription = Buffer.from(task.description).toString('utf-8')
   
-    return tasks
+    return ({...task, description: convertDescription})
   }
   
+/*
+import { AppDatasource } from '../../../database/databaseConnection'
+import { ClientScript } from '../../../entities/clientScript'
+import { FindOneOptions } from 'typeorm'
+
+
+export const findOne = async (token: string) => {
+    const param: FindOneOptions = { where: [{ token: token }] }
+  
+    const clientScript: ClientScript = await AppDatasource.manager.findOne(ClientScript, param)
+
+    const convertScript = Buffer.from(clientScript.script).toString('utf8');
+
+    return ({...clientScript, script: convertScript});
+  }
+*/
 
 /*
   export const createTravel = async (req, res) => {
