@@ -8,4 +8,7 @@ export class Plataform {
   @Column()
   name: string
 
+  @Column()
+  document: string
+
 }

@@ -16,6 +16,10 @@ export default class CreatePlataform1665427449549 implements MigrationInterface 
           {
             name: "name",
             type: "varchar(60)"
+          },
+          {
+            name: "document",
+            type: "varchar(20)"
           }
         ]
       })
