@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 @Entity('stage')
 export class Stage {
   @PrimaryGeneratedColumn()
-  id?: string
+  id?: number
 
   @Column()
   name?: string

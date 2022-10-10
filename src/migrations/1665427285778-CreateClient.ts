@@ -8,7 +8,7 @@ export default class CreateClient1665427285778 implements MigrationInterface {
         columns: [
           {
             name: "id",
-            type: "varchar(36)",
+            type: "int",
             isPrimary: true
           },
           {
