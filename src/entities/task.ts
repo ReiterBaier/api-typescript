@@ -12,7 +12,7 @@ export class Task {
   name: string
 
   @Column({name: "description", type: "longblob", nullable: false})
-  description: Buffer 
+  description: ArrayBuffer 
 
   @Column()
   idClient: number

@@ -2,12 +2,24 @@ import { AppDatasource } from '../../../database/databaseConnection'
 import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
 
-export const findAll = async () => {
-  
-    return AppDatasource.manager.find(Task)
+
+
+
+export const findAll2 = async () => {
+
+   return AppDatasource.manager.find(Task)
     
 }
 
+export const findAll = async () => {
+
+  const tasks: Task[] = await AppDatasource.manager.find(Task)
+
+  const convertDescription = Buffer.from(tasks.description).toString('utf-8')
+  
+  return ({...tasks, description: convertDescription})
+   
+}
 
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
@@ -19,15 +31,3 @@ export const findOne = async (id: string) => {
     return ({...task, description: convertDescription})
   }
   
-
-/*
-  export const createTravel = async (req, res) => {
-    try {
-      const travel = new travelModel(req.body)
-      await travel.save()
-      return res.status(201).json(travel) 
-    } catch(error) {
-      res.status(400).send({error: error.message})
-    }
-  }
-*/
