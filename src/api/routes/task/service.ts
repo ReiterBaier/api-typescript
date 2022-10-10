@@ -30,8 +30,6 @@ export const findOne = async (id: string) => {
   
 
 
-
-
   /*
   forEach não retorna dados
   mesma sintaxe do map 
