@@ -15,7 +15,8 @@ export default class CreateTask1665427471879 implements MigrationInterface {
           },
           {
             name: "idMainTask",
-            type: "int"
+            type: "int",
+            "default": 0
           },
           {
             name: "name",
@@ -50,12 +51,12 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             type: "timestamp"
           },
           {
-            name: "previousDate",
-            type: "timestamp"
+            name: "previousStartDate",
+            type: "date"
           },
           {
             name: "startDate",
-            type: "timestamp"
+            type: "date"
           },
           {
             name: "conclusionDate",

@@ -46,8 +46,12 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "timestamp"
           },
           {
-            name: "previousDate",
-            type: "timestamp"
+            name: "previousStartDate",
+            type: "date"
+          },
+          {
+            name: "startDate",
+            type: "date"
           },
           {
             name: "estimateTime",

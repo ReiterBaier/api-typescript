@@ -33,7 +33,7 @@ export class Task {
   creationDate: string 
 
   @Column()
-  previousDate: string 
+  previousStartDate: string 
 
   @Column()
   startDate: string 
