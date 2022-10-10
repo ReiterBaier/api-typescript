@@ -19,7 +19,7 @@ export default class CreateProject1665427457731 implements MigrationInterface {
           },
           {
             name: "description",
-            type: "varchar(200)"
+            type: "longblob"
           },
           {
             name: "idClient",

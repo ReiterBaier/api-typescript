@@ -24,7 +24,7 @@ export default class CreateTask1665427471879 implements MigrationInterface {
           },
           {
             name: "description",
-            type: "varchar(8000)"
+            type: "longblob"
           },
           {
             name: "idClient",
