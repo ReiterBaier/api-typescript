@@ -8,8 +8,8 @@ export class Project {
   @Column()
   name: string
 
-  @Column()
-  description: string
+  @Column({name: "description", type: "longblob", nullable: false})
+  description: Buffer 
 
   @Column()
   idClient: number 

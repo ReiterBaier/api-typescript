@@ -11,8 +11,8 @@ export class Task {
   @Column()
   name: string
 
-  @Column()
-  description: string 
+  @Column({name: "description", type: "longblob", nullable: false})
+  description: Buffer 
 
   @Column()
   idClient: number
@@ -44,3 +44,4 @@ export class Task {
   @Column()
   estimateTime: number 
 }
+

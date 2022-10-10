@@ -14,15 +14,10 @@ export const findOne = async (id: string) => {
 
     const convertDescription = Buffer.from(task.description).toString('utf-8')
   
-    return ({...task, description: convertDescription})
+    return ({convertDescription})
   }
   
 /*
-import { AppDatasource } from '../../../database/databaseConnection'
-import { ClientScript } from '../../../entities/clientScript'
-import { FindOneOptions } from 'typeorm'
-
-
 export const findOne = async (token: string) => {
     const param: FindOneOptions = { where: [{ token: token }] }
   
