@@ -1,29 +1,22 @@
 import { AppDatasource } from '../../../database/databaseConnection'
 import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
-import { getAllTasks } from './controller'
 
-
-
-
-export const findAll2 = async () => {
-
-   return AppDatasource.manager.find(Task)
-    
-}
 
 export const findAll = async () => {
 
   const tasks: Task[] = await AppDatasource.manager.find(Task)
 
-  const convertDescription = tasks.forEach(task => {
-    Buffer.from(task.description).toString('utf-8')
-    console.log(task)
+  const convertTask = tasks.map((task) => {
+
+    const convertDescription = Buffer.from(task.description).toString('utf-8')
+
+    return ({...task, description: convertDescription})
   });
   
-  return convertDescription
-   
+  return  convertTask
 }
+
 
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
@@ -35,3 +28,20 @@ export const findOne = async (id: string) => {
     return ({...task, description: convertDescription})
   }
   
+
+
+
+
+  /*
+  forEach não retorna dados
+  mesma sintaxe do map 
+  
+    const convertTask = tasks.map((task, index) => {
+
+    const convertDescription = Buffer.from(task.description).toString('utf-8')
+
+    console.log(tasks[index])
+
+    return ({...task, description: convertDescription})
+  });
+  */
