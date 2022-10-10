@@ -9,7 +9,9 @@ export default class CreatePlataform1665427449549 implements MigrationInterface 
           {
             name: "id",
             type: "int",
-            isPrimary: true
+            isPrimary: true,
+            isGenerated: true,
+            generationStrategy: "increment"
           },
           {
             name: "name",

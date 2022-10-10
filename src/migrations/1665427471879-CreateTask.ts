@@ -9,7 +9,9 @@ export default class CreateTask1665427471879 implements MigrationInterface {
           {
             name: "id",
             type: "int",
-            isPrimary: true
+            isPrimary: true,
+            isGenerated: true,
+            generationStrategy: "increment"
           },
           {
             name: "idMainTask",

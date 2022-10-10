@@ -9,7 +9,9 @@ export default class CreateType1665427475474 implements MigrationInterface {
           {
             name: "id",
             type: "int",
-            isPrimary: true
+            isPrimary: true,
+            isGenerated: true,
+            generationStrategy: "increment"
           },
           {
             name: "name",
