@@ -1,16 +1,16 @@
 import { AppDatasource } from '../../../database/databaseConnection'
-import { Tasks } from '../../../entities/tasks'
+import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
 
 export const findAll = async () => {
-    return AppDatasource.manager.find(Tasks)
+    return AppDatasource.manager.find(Task)
 }
 
 
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
   
-    const tasks: Tasks = await AppDatasource.manager.findOne(Tasks, param)
+    const tasks: Task = await AppDatasource.manager.findOne(Task, param)
   
     return tasks
   }

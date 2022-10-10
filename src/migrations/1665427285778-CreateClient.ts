@@ -8,10 +8,8 @@ export default class CreateClient1665427285778 implements MigrationInterface {
         columns: [
           {
             name: "id",
-            type: "uuid",
-            isPrimary: true,
-            generationStrategy: "uuid",
-            default: "uuid_generate_v4()"
+            type: "varchar(36)",
+            isPrimary: true
           },
           {
             name: "document",
@@ -23,7 +21,8 @@ export default class CreateClient1665427285778 implements MigrationInterface {
           },
           {
             name: "token",
-            type: "varchar(200)"
+            type: "varchar(200)",
+            default: "0"
           }
         ]
       })

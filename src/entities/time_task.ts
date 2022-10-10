@@ -1,11 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('plataform')
-export class Plataform {
+@Entity('time_task')
+export class Time_task {
   @PrimaryGeneratedColumn()
   id: string
-  
-  @Column()
-  name: string
 
+  @Column()
+  id_task: number
+
+  @Column()
+  time: string 
 }

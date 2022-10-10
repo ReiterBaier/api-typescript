@@ -1,9 +1,9 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('tasks')
-export class Tasks {
-  @PrimaryColumn()
-  id: number
+@Entity('task')
+export class Task {
+  @PrimaryGeneratedColumn()
+  id: string
 
   @Column()
   main_task: number

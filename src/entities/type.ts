@@ -1,11 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('plataform')
-export class Plataform {
+@Entity('type')
+export class Type {
   @PrimaryGeneratedColumn()
   id: string
-  
+
   @Column()
   name: string
 
+  @Column()
+  focus: string
 }
