@@ -3,7 +3,9 @@ import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
 
 export const findAll = async () => {
+  
     return AppDatasource.manager.find(Task)
+    
 }
 
 
@@ -14,20 +16,9 @@ export const findOne = async (id: string) => {
 
     const convertDescription = Buffer.from(task.description).toString('utf-8')
   
-    return ({convertDescription})
+    return ({...task, description: convertDescription})
   }
   
-/*
-export const findOne = async (token: string) => {
-    const param: FindOneOptions = { where: [{ token: token }] }
-  
-    const clientScript: ClientScript = await AppDatasource.manager.findOne(ClientScript, param)
-
-    const convertScript = Buffer.from(clientScript.script).toString('utf8');
-
-    return ({...clientScript, script: convertScript});
-  }
-*/
 
 /*
   export const createTravel = async (req, res) => {
