@@ -3,14 +3,14 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 @Entity('stage')
 export class Stage {
   @PrimaryGeneratedColumn()
-  id?: number
+  id: number
 
   @Column()
-  name?: string
+  name: string
 
   @Column()
-  burden?: number
+  weight: number
 
   @Column()
-  integrationId?: string 
+  projectId: number 
 }

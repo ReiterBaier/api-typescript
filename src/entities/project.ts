@@ -12,26 +12,29 @@ export class Project {
   description: string
 
   @Column()
-  id_client: number 
+  idClient: number 
 
   @Column()
-  id_plataform: number
+  idPlataform: number
 
   @Column()
-  id_type: number
+  idType: number
 
   @Column()
-  id_user: number 
+  idUser: number 
 
   @Column()
-  id_status: number 
+  idStatus: number 
 
   @Column()
-  creation_date: string
+  idStage: number 
 
   @Column()
-  previous_date: string 
+  creationDate: string
 
   @Column()
-  estimate_time: string 
+  previousDate: string 
+
+  @Column()
+  estimateTime: string 
 }

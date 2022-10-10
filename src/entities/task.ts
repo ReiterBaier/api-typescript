@@ -6,7 +6,7 @@ export class Task {
   id: number
 
   @Column()
-  main_task: number
+  idMainTask: number
 
   @Column()
   name: string
@@ -15,32 +15,32 @@ export class Task {
   description: string 
 
   @Column()
-  id_client: number
+  idClient: number
 
   @Column()
-  id_plataform: number
+  idPlataform: number
 
   @Column()
-  id_type: number 
+  idType: number 
 
   @Column()
-  id_user: number 
+  idUser: number 
 
   @Column()
-  id_status: string
+  idStatus: number
 
   @Column()
-  creation_date: string 
+  creationDate: string 
 
   @Column()
-  previous_date: string 
+  previousDate: string 
 
   @Column()
-  start_date: string 
+  startDate: string 
 
   @Column()
-  conclusion_date: string 
+  conclusionDate: string 
 
   @Column()
-  estimate_time: string 
+  estimateTime: number 
 }
