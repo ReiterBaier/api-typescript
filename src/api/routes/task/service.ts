@@ -1,6 +1,7 @@
 import { AppDatasource } from '../../../database/databaseConnection'
 import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
+import { getAllTasks } from './controller'
 
 
 
@@ -15,9 +16,12 @@ export const findAll = async () => {
 
   const tasks: Task[] = await AppDatasource.manager.find(Task)
 
-  const convertDescription = Buffer.from(tasks.description).toString('utf-8')
+  const convertDescription = tasks.forEach(task => {
+    Buffer.from(task.description).toString('utf-8')
+    console.log(task)
+  });
   
-  return ({...tasks, description: convertDescription})
+  return convertDescription
    
 }
 
