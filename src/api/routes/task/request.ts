@@ -1,8 +1,6 @@
+/*import { ArrayUnique, IsArray, IsBoolean, IsInt, IsOptional, IsString } from 'class-validator'
 
-/*
-import { ArrayUnique, IsArray, IsBoolean, IsInt, IsOptional, IsPositive } from 'class-validator'
-
-export class FromToRequest {
+export class createTravelValitador {
   @IsOptional()
   @IsBoolean()
   isArray?: boolean
@@ -21,4 +19,5 @@ export class FromToRequest {
   @IsInt({ each: true })
   @IsPositive({ each: true })
   fields?: number[]
-}*/
+
+*/

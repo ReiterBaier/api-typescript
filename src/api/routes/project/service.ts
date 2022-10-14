@@ -6,12 +6,12 @@ export const findAll = async () => {
 
     const projects: Project[] = await AppDatasource.manager.find(Project)
   
-    const convertedProject = projects.map((project) => {
-  
-      const convertDescription = Buffer.from(project.description).toString('utf-8')
-  
-      return ({...project, description: convertDescription})
-    });
+      const convertedProject = projects.map((project) => {
+    
+        const convertDescription = Buffer.from(project.description).toString('utf-8')
+    
+        return ({...project, description: convertDescription})
+      });
     
     return  convertedProject
   }

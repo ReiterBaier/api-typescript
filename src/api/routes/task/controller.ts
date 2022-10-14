@@ -1,5 +1,5 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { create, findAll, findOne } from './service'
 
 @JsonController('/suportfly')
 export class getAllTasks {
@@ -20,6 +20,17 @@ export class getTaskById {
   @OnUndefined(400)
   getWithFilter(@Param('id') id: string) {
     return findOne(id)
+  }
+}
+
+
+@JsonController('/suportfly')
+export class createTask {
+  @Post('/task/:id')
+  @HttpCode(200)
+  @OnUndefined(400)
+  create(@Body() createTask: createTask) {
+    return create(createTask)
   }
 }
 

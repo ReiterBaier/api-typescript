@@ -1,6 +1,9 @@
 import { AppDatasource } from '../../../database/databaseConnection'
 import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
+/*
+import { createTravelValitador } from './request'
+import { modelTask } from '../../model/task'*/
 
 
 export const findAll = async () => {
@@ -28,6 +31,23 @@ export const findOne = async (id: string) => {
     return ({...task, description: convertDescription})
   }
   
+
+  /*export const create = async (createTravelValitador: CreateTravelValitador) => {
+    const task = new modelTask;
+
+    Object.assign(travel, {
+        description: createTravelValitador.description
+    })
+
+    tasks.push(task);
+    return task;
+}
+*/
+
+
+
+
+
 
 
   /*
