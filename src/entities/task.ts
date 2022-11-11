@@ -9,6 +9,9 @@ export class Task {
   idMainTask: number
 
   @Column()
+  idProject: number
+
+  @Column()
   name: string
 
   @Column({name: "description", type: "longblob", nullable: false})
@@ -30,6 +33,9 @@ export class Task {
   idStatus: number
 
   @Column()
+  idStage: number 
+
+  @Column()
   creationDate: string 
 
   @Column()
@@ -37,6 +43,9 @@ export class Task {
 
   @Column()
   startDate: string 
+
+  @Column()
+  previousConclusionDate: string 
 
   @Column()
   conclusionDate: string 

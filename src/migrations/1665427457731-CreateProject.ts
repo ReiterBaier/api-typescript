@@ -15,7 +15,7 @@ export default class CreateProject1665427457731 implements MigrationInterface {
           },
           {
             name: "name",
-            type: "varchar(60)"
+            type: "varchar(100)"
           },
           {
             name: "description",
@@ -42,6 +42,10 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "int"
           },
           {
+            name: "idStage",
+            type: "int"
+          },
+          {
             name: "creationDate",
             type: "timestamp"
           },
@@ -54,8 +58,16 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "date"
           },
           {
+            name: "previousConclusionDate",
+            type: "date"
+          },
+          {
+            name: "conclusionDate",
+            type: "date"
+          },
+          {
             name: "estimateTime",
-            type: "numeric(16,6)"
+            type: "double"
           }
         ]
       })

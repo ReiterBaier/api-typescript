@@ -19,6 +19,11 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             "default": 0
           },
           {
+            name: "idProject",
+            type: "int",
+            "default": 0
+          },
+          {
             name: "name",
             type: "varchar(200)"
           },
@@ -47,6 +52,10 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             type: "int"
           },
           {
+            name: "idStage",
+            type: "int"
+          },
+          {
             name: "creationDate",
             type: "timestamp"
           },
@@ -60,11 +69,15 @@ export default class CreateTask1665427471879 implements MigrationInterface {
           },
           {
             name: "conclusionDate",
-            type: "timestamp"
+            type: "date"
+          },
+          {
+            name: "previousConclusionDate",
+            type: "date"
           },
           {
             name: "estimateTime",
-            type: "numeric(16,6)"
+            type: "double"
           }
         ]
       })

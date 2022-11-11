@@ -39,5 +39,11 @@ export class Project {
   startDate: string 
 
   @Column()
+  previousConclusionDate: string 
+
+  @Column()
+  conclusionDate: string 
+
+  @Column()
   estimateTime: string 
 }

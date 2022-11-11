@@ -1,13 +1,13 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-@Entity('time_task')
-export class Time_task {
+@Entity('timeTask')
+export class timeTask {
   @PrimaryGeneratedColumn()
   id: number
 
   @Column()
-  id_task: number
+  idTask: number
 
   @Column()
-  time: string 
+  time: number 
 }
