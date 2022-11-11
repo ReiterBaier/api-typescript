@@ -35,13 +35,13 @@ export class Project {
   @Column()
   previousStartDate: string 
 
-  @Column()
+  @Column({type: "date"})
   startDate: string 
 
-  @Column()
+  @Column({type: "date"})
   previousConclusionDate: string 
 
-  @Column()
+  @Column({type: "date"})
   conclusionDate: string 
 
   @Column()

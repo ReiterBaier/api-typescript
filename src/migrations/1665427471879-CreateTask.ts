@@ -52,10 +52,6 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             type: "int"
           },
           {
-            name: "idStage",
-            type: "int"
-          },
-          {
             name: "creationDate",
             type: "timestamp"
           },

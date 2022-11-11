@@ -33,21 +33,18 @@ export class Task {
   idStatus: number
 
   @Column()
-  idStage: number 
-
-  @Column()
   creationDate: string 
 
-  @Column()
+  @Column({type: "date"})
   previousStartDate: string 
 
-  @Column()
+  @Column({type: "date"})
   startDate: string 
 
-  @Column()
+  @Column({type: "date"})
   previousConclusionDate: string 
 
-  @Column()
+  @Column({type: "date"})
   conclusionDate: string 
 
   @Column()
