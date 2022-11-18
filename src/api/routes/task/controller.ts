@@ -1,5 +1,5 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { create, findAll, findOne } from './service'
+import { findAll, findOne } from './service'
 
 @JsonController('/suportfly')
 export class getAllTasks {
@@ -23,7 +23,7 @@ export class getTaskById {
   }
 }
 
-
+/*
 @JsonController('/suportfly')
 export class createTask {
   @Post('/task/:id')
@@ -33,7 +33,7 @@ export class createTask {
     return create(createTask)
   }
 }
-
+*/
 /*
 @Post('')
 @HttpCode(201)
