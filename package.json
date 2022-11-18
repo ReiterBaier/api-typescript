@@ -10,7 +10,9 @@
     "build:dist": "tsc --build tsconfig.build.json",
     "install_service": "set NODE_ENV=development&& tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify ./src/service.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "deploy": "npm run build && node ./dist/src/index.js"
+    "awsbuild:dist": "tsc --build tsconfig.build.json",
+    "awsBuild": "npm install --force && npm run awsbuild:dist",
+    "deploy": "npm run awsBuild && node ./dist/src/index.js"
   },
   "repository": "https://github.com/ReiterBaier/api-project-integrations.git",
   "author": "Reiter Baier <91735552+ReiterBaier@users.noreply.github.com>",
