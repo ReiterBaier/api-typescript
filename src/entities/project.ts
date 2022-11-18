@@ -8,7 +8,7 @@ export class Project {
   @Column()
   name: string
 
-  @Column({name: "description", type: "longblob", nullable: false})
+  @Column({name: "description", type: "longblob", nullable: true})
   description: Buffer 
 
   @Column()
