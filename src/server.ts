@@ -27,3 +27,6 @@ export const server = async () => {
 
   return app
 }
+
+
+app.get('/', (req, res) => res.send('Welcome to Suportfly API'))
