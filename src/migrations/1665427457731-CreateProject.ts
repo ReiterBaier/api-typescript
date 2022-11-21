@@ -42,10 +42,6 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "int"
           },
           {
-            name: "idStage",
-            type: "int"
-          },
-          {
             name: "creationDate",
             type: "timestamp"
           },

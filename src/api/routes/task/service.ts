@@ -32,19 +32,6 @@ export const findOne = async (id: string) => {
   }
   
 
-  /*export const create = async (createTravelValitador: CreateTravelValitador) => {
-    const task = new modelTask;
-
-    Object.assign(travel, {
-        description: createTravelValitador.description
-    })
-
-    tasks.push(task);
-    return task;
-}
-*/
-
-
 
 
 

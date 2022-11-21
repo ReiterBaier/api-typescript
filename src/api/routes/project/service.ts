@@ -18,12 +18,12 @@ export const findAll = async () => {
   
 
 
-
-
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
   
     const projects: Project = await AppDatasource.manager.findOne(Project, param)
-  
-    return projects
+
+    const convertDescription = Buffer.from(projects.description).toString('utf-8')
+
+    return ({...projects, description: convertDescription})
   }

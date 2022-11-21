@@ -1,5 +1,5 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findWithFilter } from './service'
+import { findAll, findOne } from './service'
 
 @JsonController('/suportfly')
 export class getAllStatus {
@@ -13,14 +13,13 @@ export class getAllStatus {
 
 @JsonController('/suportfly')
 export class getStatusByFocus {
-  @Get('/status/:focus')
+  @Get('/status/:id')
   @HttpCode(200)
   @OnUndefined(400)
-  getWithFilter(@Param('focus') focus: string) {
-    return findWithFilter(focus)
+  getWithFilter(@Param('id') id: string) {
+    return findOne(id)
   }
 }
-
 
 
 

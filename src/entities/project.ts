@@ -27,9 +27,6 @@ export class Project {
   idStatus: number 
 
   @Column()
-  idStage: number 
-
-  @Column()
   creationDate: string
 
   @Column()

@@ -7,8 +7,8 @@ export const findAll = async () => {
 }
 
 
-export const findWithFilter = async (focus: string) => {
-    const param: FindOneOptions = { where: [{ focus: focus }] }
+export const findOne = async (id: string) => {
+    const param: FindOneOptions = { where: [{ id: id }] }
   
     const types: Type = await AppDatasource.manager.findOne(Type, param)
   

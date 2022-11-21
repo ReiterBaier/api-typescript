@@ -1,6 +1,7 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
 import { findAll, findOne } from './service'
 
+
 @JsonController('/suportfly')
 export class getAllProjects {
   @Get('/projects')
@@ -10,8 +11,6 @@ export class getAllProjects {
     return findAll()
   }
 }
-
-
 @JsonController('/suportfly')
 export class getProjectsById {
   @Get('/projects/:id')
@@ -22,3 +21,16 @@ export class getProjectsById {
   }
 }
 
+
+/*
+import { createProjectValitador } from './request'
+@JsonController('/suportfly')
+export class createProject {
+  @Post('/projects')
+  @HttpCode(200)
+  @OnUndefined(400)
+  projectObject(@Body({ "required": true, "validate": true}) projectObject: object) {
+    return new createProjectValitador()
+  }
+}
+*/
