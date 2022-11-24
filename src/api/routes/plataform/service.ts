@@ -1,4 +1,4 @@
-import { AppDatasource } from '../../../database/databaseConnection'
+import { AppDatasource } from '../../../config/databaseConnection'
 import { Plataform } from '../../../entities/plataform'
 import { FindOneOptions } from 'typeorm'
 
