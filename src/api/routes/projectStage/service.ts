@@ -16,14 +16,3 @@ import { FindOneOptions } from 'typeorm'
     
     return  convertedProjectStage
   }
-  
-  
-  export const findOne = async (id: string) => {
-      const param: FindOneOptions = { where: [{ id: id }] }
-    
-      const projectStage: ProjectStage = await AppDatasource.manager.findOne(ProjectStage, param)
-  
-      const convertDescription = Buffer.from(projectStage.description).toString('utf-8')
-    
-      return ({...projectStage, description: convertDescription})
-    }

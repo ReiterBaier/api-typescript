@@ -1,5 +1,5 @@
 import { JsonController,Param, HttpCode, OnUndefined, Get} from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { findAll } from './service'
 
 @JsonController('/suportfly')
 export class getAllProjectStage {
@@ -10,16 +10,5 @@ export class getAllProjectStage {
     return findAll()
   }
 }
-
-@JsonController('/suportfly')
-export class getOneProjectStage {
-  @Get('/projectStage/:id')
-  @HttpCode(200)
-  @OnUndefined(400)
-  getOne(@Param('id') id: string) {
-    return findOne(id)
-  }
-}
-
 
 
