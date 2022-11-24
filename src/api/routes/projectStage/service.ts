@@ -1,6 +1,5 @@
 import { AppDatasource } from '../../../config/databaseConnection'
 import { ProjectStage } from '../../../entities/projectStage'
-import { FindOneOptions } from 'typeorm'
 
 
   export const findAll = async () => {
