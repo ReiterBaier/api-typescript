@@ -3,12 +3,15 @@ import { User } from '../../../entities/user'
 import { FindOneOptions } from 'typeorm'
 
 
-export const findOne = async (username: string, password: string) => {
-  const param: FindOneOptions = { where: [{ username: username, password: password }] }
+
+export const findAll = async () => {
+  return AppDatasource.manager.find(User)
+}
+
+export const findOne = async (id: string) => {
+  const param: FindOneOptions = { where: [{ id: id }] }
 
   const user: User = await AppDatasource.manager.findOne(User, param)
 
-  return {id: user.id} 
+  return user
 }
-
-
