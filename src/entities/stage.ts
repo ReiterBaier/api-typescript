@@ -8,9 +8,9 @@ export class Stage {
   @Column()
   name: string
 
-  @Column()
-  weight: number
+  @Column({name: "description", type: "longblob", nullable: true})
+  description: Buffer 
 
   @Column()
-  projectId: number 
+  weight: number
 }
