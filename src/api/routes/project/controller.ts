@@ -3,7 +3,7 @@ import { findAll, findOne, create, update } from './service'
 import { projectValitador } from './request'
 
 
-@JsonController('/suportfly')
+@JsonController('/suportfy')
 export class projectController {
   @Get('/project')
   @HttpCode(200)

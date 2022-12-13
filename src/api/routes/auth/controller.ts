@@ -2,7 +2,7 @@ import { JsonController, Post,HttpCode, OnUndefined, HeaderParam } from 'routing
 import { authService } from './service'
 
 
-@JsonController('/suportfly')
+@JsonController('/suportfy')
 export class authUser {
   @Post('/auth')
   @HttpCode(200)

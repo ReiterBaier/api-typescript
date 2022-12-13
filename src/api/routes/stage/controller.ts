@@ -1,18 +1,15 @@
 import { JsonController,Param, HttpCode, OnUndefined, Get} from 'routing-controllers'
 import { findAll, findOne } from './service'
 
-@JsonController('/suportfly')
-export class getAllStage {
+@JsonController('/suportfy')
+export class stageController {
   @Get('/stage')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
     return findAll()
   }
-}
 
-@JsonController('/suportfly')
-export class getStageById {
   @Get('/stage/:id')
   @HttpCode(200)
   @OnUndefined(400)

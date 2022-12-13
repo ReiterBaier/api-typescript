@@ -1,18 +1,15 @@
 import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
 import { findAll, findOne } from './service'
 
-@JsonController('/suportfly')
-export class getAllPlataforms {
+@JsonController('/suportfy')
+export class plataformController {
   @Get('/plataform')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
     return findAll()
   }
-}
 
-@JsonController('/suportfly')
-export class getPlataformById {
   @Get('/plataform/:id')
   @HttpCode(200)
   @OnUndefined(400)
@@ -20,7 +17,3 @@ export class getPlataformById {
     return findOne(id)
   }
 }
-
-
-
-

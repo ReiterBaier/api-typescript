@@ -2,18 +2,15 @@ import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyPara
 import { findOne, findAll  } from './service'
 
 
-@JsonController('/suportfly')
-export class getAllUser {
+@JsonController('/suportfy')
+export class userController {
   @Get('/user')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
     return findAll()
   }
-}
 
-@JsonController('/suportfly')
-export class getUserById {
   @Get('/user/:id')
   @HttpCode(200)
   @OnUndefined(400)
@@ -21,5 +18,3 @@ export class getUserById {
     return findOne(id)
   }
 }
-
-
