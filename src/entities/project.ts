@@ -42,5 +42,5 @@ export class Project {
   conclusionDate: string 
 
   @Column()
-  estimateTime: string 
+  estimateTime: number 
 }

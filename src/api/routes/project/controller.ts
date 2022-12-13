@@ -1,5 +1,6 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, Put } from 'routing-controllers'
+import { findAll, findOne, create, update } from './service'
+import { PostProjectValitador } from './request'
 
 
 @JsonController('/suportfly')
@@ -22,15 +23,22 @@ export class getProjectsById {
 }
 
 
-/*
-import { createProjectValitador } from './request'
 @JsonController('/suportfly')
 export class createProject {
-  @Post('/projects')
-  @HttpCode(200)
+  @Post('/project')
   @OnUndefined(400)
-  projectObject(@Body({ "required": true, "validate": true}) projectObject: object) {
-    return new createProjectValitador()
+  createProject(@Body({ "required": true, "validate": true}) projectCreation: PostProjectValitador) {
+    return create(projectCreation)
   }
 }
-*/
+
+@JsonController('/suportfly')
+export class updateProject {
+  @Put('/project/:id')
+  @OnUndefined(200)
+  updateProject(@Param('id') id: number, @Body() clientRequest: PostProjectValitador) {
+    return update(clientRequest, id)
+  }
+}
+
+
