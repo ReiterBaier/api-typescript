@@ -1,7 +1,7 @@
 import { AppDatasource } from '../../../config/databaseConnection'
 import { Project } from '../../../entities/project'
 import { FindOneOptions } from 'typeorm'
-import { PostProjectValitador } from './request'
+import { projectValitador } from './request'
 
 
 /* get all projects  */
@@ -33,7 +33,7 @@ export const findOne = async (id: string) => {
 
 
 /* create a new project */
- export const save = async (project: Project, projectRequest: PostProjectValitador, id?: number) => {
+ export const save = async (project: Project, projectRequest: projectValitador, id?: number) => {
     project.name = projectRequest.name
     project.idClient = projectRequest.idClient
     project.idPlataform = projectRequest.idPlataform
@@ -51,7 +51,7 @@ export const findOne = async (id: string) => {
   }
 
 
-  export const create = async (projectRequest: PostProjectValitador) => {
+  export const create = async (projectRequest: projectValitador) => {
     const project = new Project()
   
     return save(project, projectRequest)
@@ -69,7 +69,7 @@ export const findOrNewInstance = async (id: number) => {
   return foundedProject || new Project()
 }
 
-export const update = async (projectRequest: PostProjectValitador, id: number) => {
+export const update = async (projectRequest: projectValitador, id: number) => {
   const project = await findOrNewInstance(id)
   return save(project, projectRequest)
 }
