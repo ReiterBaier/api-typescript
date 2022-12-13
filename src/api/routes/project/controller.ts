@@ -4,7 +4,7 @@ import { findAll, findOne } from './service'
 
 @JsonController('/suportfly')
 export class getAllProjects {
-  @Get('/projects')
+  @Get('/project')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
@@ -13,7 +13,7 @@ export class getAllProjects {
 }
 @JsonController('/suportfly')
 export class getProjectsById {
-  @Get('/projects/:id')
+  @Get('/project/:id')
   @HttpCode(200)
   @OnUndefined(400)
   getWithFilter(@Param('id') id: string) {

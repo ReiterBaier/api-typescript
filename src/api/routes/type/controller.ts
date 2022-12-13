@@ -3,7 +3,7 @@ import { findAll, findOne } from './service'
 
 @JsonController('/suportfly')
 export class getAllTypes {
-  @Get('/types')
+  @Get('/type')
   @HttpCode(200)
   @OnUndefined(400)
   getAll() {
@@ -14,7 +14,7 @@ export class getAllTypes {
 
 @JsonController('/suportfly')
 export class getTypesByFocus {
-  @Get('/types/:id')
+  @Get('/type/:id')
   @HttpCode(200)
   @OnUndefined(400)
   getWithFilter(@Param('id') id: string) {

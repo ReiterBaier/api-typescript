@@ -20,7 +20,6 @@ export const findAll = async () => {
   return  convertedTask
 }
 
-
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
   
@@ -30,7 +29,6 @@ export const findOne = async (id: string) => {
   
     return ({...task, description: convertDescription})
   }
-  
 
 
 
