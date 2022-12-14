@@ -1,5 +1,6 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, Patch } from 'routing-controllers'
+import { findAll, findOne, create, update } from './service'
+import { clientValitador } from './request'
 
 @JsonController('/suportfy')
 export class clientController {
@@ -17,6 +18,17 @@ export class clientController {
     return findOne(id)
   }
 
+  @Post('/client')
+  @OnUndefined(400)
+  postClient(@Body({ "required": true, "validate": true}) clientCreation: clientValitador) {
+    return create(clientCreation)
+  }
+
+  @Patch('/client/:id')
+  @OnUndefined(200)
+  patchClient(@Param('id') id: number, @Body() clientRequest: clientValitador) {
+    return update(clientRequest, id)
+  }
 }
 
 

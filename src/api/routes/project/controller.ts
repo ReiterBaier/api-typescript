@@ -27,8 +27,8 @@ export class projectController {
 
   @Patch('/project/:id')
   @OnUndefined(200)
-  patchProject(@Param('id') id: number, @Body() clientRequest: projectValitador) {
-    return update(clientRequest, id)
+  patchProject(@Param('id') id: number, @Body() projectRequest: projectValitador) {
+    return update(projectRequest, id)
   }
 }
 
