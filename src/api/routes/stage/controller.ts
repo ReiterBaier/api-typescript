@@ -1,5 +1,5 @@
-import { JsonController,Param, HttpCode, OnUndefined, Get} from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { JsonController,Param, HttpCode, OnUndefined, Get, Post, Patch, Body} from 'routing-controllers'
+import { findAll, findOne} from './service'
 
 @JsonController('/suportfy')
 export class stageController {

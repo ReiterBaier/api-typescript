@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsString } from 'class-validator'
 
 
-export class statusValitador {
+export class typeValitador {
   @IsNotEmpty()
   @IsString()
   name: string
