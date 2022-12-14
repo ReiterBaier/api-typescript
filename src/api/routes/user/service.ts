@@ -45,10 +45,10 @@ export const create = async (userRequest: userValitador) => {
 
 /* update existing user */
 export const findOrNewInstance = async (id: number) => {
-const filter: FindOneOptions = { where: { id: id } }
+const param: FindOneOptions = { where: { id: id } }
 
-const foundedUser = await AppDatasource.manager.findOne(User, filter)
-return foundedUser || new User()
+const searchUser = await AppDatasource.manager.findOne(User, param)
+return searchUser || new User()
 }
 
 export const update = async (userRequest: userValitador, id: number) => {

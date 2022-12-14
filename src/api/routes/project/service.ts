@@ -64,10 +64,10 @@ export const findOne = async (id: string) => {
 
 /* update existing project */
 export const findOrNewInstance = async (id: number) => {
-  const filter: FindOneOptions = { where: { id: id } }
+  const param: FindOneOptions = { where: { id: id } }
 
-  const foundedProject = await AppDatasource.manager.findOne(Project, filter)
-  return foundedProject || new Project()
+  const searchProject = await AppDatasource.manager.findOne(Project, param)
+  return searchProject || new Project()
 }
 
 export const update = async (projectRequest: projectValitador, id: number) => {

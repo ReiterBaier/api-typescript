@@ -66,10 +66,10 @@ export const create = async (taskRequest: taskValitador) => {
 /* change a existing task */
 
 export const findOrNewInstance = async (id: number) => {
-const filter: FindOneOptions = { where: { id: id } }
+const param: FindOneOptions = { where: { id: id } }
 
-const foundedTask = await AppDatasource.manager.findOne(Task, filter)
-return foundedTask || new Task()
+const searchTask = await AppDatasource.manager.findOne(Task, param)
+return searchTask || new Task()
 }
 
 export const update = async (taskRequest: taskValitador, id: number) => {

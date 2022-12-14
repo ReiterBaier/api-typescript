@@ -42,10 +42,10 @@ export const create = async (statusRequest: statusValitador) => {
 
 /* update existing status */
 export const findOrNewInstance = async (id: number) => {
-const filter: FindOneOptions = { where: { id: id } }
+const param: FindOneOptions = { where: { id: id } }
 
-const foundedStatus = await AppDatasource.manager.findOne(Status, filter)
-return foundedStatus || new Status()
+const searchStatus = await AppDatasource.manager.findOne(Status, param)
+return searchStatus || new Status()
 }
 
 export const update = async (statusRequest: statusValitador, id: number) => {

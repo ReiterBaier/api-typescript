@@ -42,10 +42,10 @@ export const save = async (type: Type, typeRequest: typeValitador, id?: number) 
   
   /* update existing type */
   export const findOrNewInstance = async (id: number) => {
-  const filter: FindOneOptions = { where: { id: id } }
+  const param: FindOneOptions = { where: { id: id } }
   
-  const foundedType = await AppDatasource.manager.findOne(Type, filter)
-  return foundedType || new Type()
+  const searchType = await AppDatasource.manager.findOne(Type, param)
+  return searchType || new Type()
   }
   
   export const update = async (typeRequest: typeValitador, id: number) => {

@@ -1,5 +1,6 @@
 import { JsonController,Param, HttpCode, OnUndefined, Get, Post, Patch, Body} from 'routing-controllers'
-import { findAll, findOne} from './service'
+import { findAll, findOne, create, update} from './service'
+import { stageValitador } from './request'
 
 @JsonController('/suportfy')
 export class stageController {
@@ -15,6 +16,18 @@ export class stageController {
   @OnUndefined(400)
   getById(@Param('id') id: string) {
     return findOne(id)
+  }
+
+  @Post('/stage')
+  @OnUndefined(400)
+  postStage(@Body({ "required": true, "validate": true}) stageCreation: stageValitador) {
+    return create(stageCreation)
+  }
+
+  @Patch('/stage/:id')
+  @OnUndefined(200)
+  patchProject(@Param('id') id: number, @Body() stageRequest: stageValitador) {
+    return update(stageRequest, id)
   }
 }
 
