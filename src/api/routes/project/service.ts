@@ -40,8 +40,9 @@ export const findOne = async (id: string) => {
     project.idType = projectRequest.idType
     project.idUser = projectRequest.idUser
     project.idStatus = projectRequest.idStatus
-    project.previousStartDate = projectRequest.previousStartDate
-    project.previousConclusionDate = projectRequest.previousConclusionDate
+    project.expectedStartDate = projectRequest.expectedStartDate
+    project.expectedEndDate = projectRequest.expectedEndDate
+    project.endDate = projectRequest.endDate
     project.estimateTime = projectRequest.estimateTime
     project.description = projectRequest.description
   

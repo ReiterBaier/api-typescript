@@ -45,6 +45,7 @@ export const save = async (task: Task, taskRequest: taskValitador, id?: number) 
   task.idStatus = taskRequest.idStatus
   task.expectedStartDate = taskRequest.expectedStartDate
   task.expectedEndDate = taskRequest.expectedEndDate
+  task.endDate = taskRequest.endDate
   task.estimateTime = taskRequest.estimateTime
 
   const createdTask = await AppDatasource.manager.save(Task, task)
@@ -67,8 +68,8 @@ export const create = async (taskRequest: taskValitador) => {
 export const findOrNewInstance = async (id: number) => {
 const filter: FindOneOptions = { where: { id: id } }
 
-const foundedProject = await AppDatasource.manager.findOne(Task, filter)
-return foundedProject || new Task()
+const foundedTask = await AppDatasource.manager.findOne(Task, filter)
+return foundedTask || new Task()
 }
 
 export const update = async (taskRequest: taskValitador, id: number) => {
