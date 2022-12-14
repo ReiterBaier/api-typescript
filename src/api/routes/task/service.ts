@@ -1,11 +1,9 @@
 import { AppDatasource } from '../../../config/databaseConnection'
 import { Task } from '../../../entities/task'
 import { FindOneOptions } from 'typeorm'
-/*
-import { createTravelValitador } from './request'
-import { modelTask } from '../../model/task'*/
+import { taskValitador } from './request'
 
-
+/* get all tasks and convert field blob to string */
 export const findAll = async () => {
 
   const tasks: Task[] = await AppDatasource.manager.find(Task)
@@ -20,6 +18,7 @@ export const findAll = async () => {
   return  convertedTask
 }
 
+/* get one task by id param, and convert field blob to string */
 export const findOne = async (id: string) => {
     const param: FindOneOptions = { where: [{ id: id }] }
   
@@ -33,49 +32,48 @@ export const findOne = async (id: string) => {
 
 
 
-/*
+/* create a new task */
+export const save = async (task: Task, taskRequest: taskValitador, id?: number) => {
+  task.name = taskRequest.name
+  task.description = taskRequest.description
+  task.idMainTask = taskRequest.idMainTask
+  task.idProject = taskRequest.idProject
+  task.idClient = taskRequest.idClient
+  task.idPlataform = taskRequest.idPlataform
+  task.idType = taskRequest.idType
+  task.idUser = taskRequest.idUser
+  task.idStatus = taskRequest.idStatus
+  task.expectedStartDate = taskRequest.expectedStartDate
+  task.expectedEndDate = taskRequest.expectedEndDate
+  task.estimateTime = taskRequest.estimateTime
 
+  const createdTask = await AppDatasource.manager.save(Task, task)
 
-export const save = async (project: Project, projectRequest: projectValitador, id?: number) => {
-  project.name = projectRequest.name
-  project.idClient = projectRequest.idClient
-  project.idPlataform = projectRequest.idPlataform
-  project.idType = projectRequest.idType
-  project.idUser = projectRequest.idUser
-  project.idStatus = projectRequest.idStatus
-  project.previousStartDate = projectRequest.previousStartDate
-  project.previousConclusionDate = projectRequest.previousConclusionDate
-  project.estimateTime = projectRequest.estimateTime
-  project.description = projectRequest.description
-
-  const createdProject = await AppDatasource.manager.save(Project, project)
-
-  return createdProject.id !== id ? { id: createdProject.id } : undefined
+  return createdTask.id !== id ? { id: createdTask.id } : undefined
 }
 
 
-export const create = async (projectRequest: projectValitador) => {
-  const project = new Project()
+export const create = async (taskRequest: taskValitador) => {
+  const task = new Task()
 
-  return save(project, projectRequest)
+  return save(task, taskRequest)
 }
 
 
 
 
-
+/* change a existing task */
 
 export const findOrNewInstance = async (id: number) => {
 const filter: FindOneOptions = { where: { id: id } }
 
-const foundedProject = await AppDatasource.manager.findOne(Project, filter)
-return foundedProject || new Project()
+const foundedProject = await AppDatasource.manager.findOne(Task, filter)
+return foundedProject || new Task()
 }
 
-export const update = async (projectRequest: projectValitador, id: number) => {
-const project = await findOrNewInstance(id)
-return save(project, projectRequest)
+export const update = async (taskRequest: taskValitador, id: number) => {
+const task = await findOrNewInstance(id)
+return save(task, taskRequest)
 }
 
-*/
 
