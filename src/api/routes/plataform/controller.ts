@@ -1,5 +1,6 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, BodyParam, HeaderParam } from 'routing-controllers'
-import { findAll, findOne } from './service'
+import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, Patch } from 'routing-controllers'
+import { findAll, findOne, create, update} from './service'
+import { plataformValidator } from './request'
 
 @JsonController('/suportfy')
 export class plataformController {
@@ -15,5 +16,18 @@ export class plataformController {
   @OnUndefined(400)
   getById(@Param('id') id: string) {
     return findOne(id)
+  }
+
+  
+  @Post('/plataform')
+  @OnUndefined(400)
+  postPlataform(@Body({ "required": true, "validate": true}) plataformCreation: plataformValidator) {
+    return create(plataformCreation)
+  }
+
+  @Patch('/plataform/:id')
+  @OnUndefined(200)
+  patchPlataform(@Param('id') id: number, @Body() plataformRequest: plataformValidator) {
+    return update(plataformRequest, id)
   }
 }
