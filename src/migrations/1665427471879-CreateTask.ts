@@ -60,7 +60,7 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             type: "timestamp"
           },
           {
-            name: "previousStartDate",
+            name: "expectedStartDate",
             type: "date"
           },
           {
@@ -68,11 +68,11 @@ export default class CreateTask1665427471879 implements MigrationInterface {
             type: "date"
           },
           {
-            name: "conclusionDate",
+            name: "endDate",
             type: "date"
           },
           {
-            name: "previousConclusionDate",
+            name: "expectedEndDate",
             type: "date"
           },
           {

@@ -13,9 +13,10 @@ export class clientController {
   @Get('/client/:id')
   @HttpCode(200)
   @OnUndefined(400)
-  getWithFilter(@Param('id') id: string) {
+  getById(@Param('id') id: string) {
     return findOne(id)
   }
+
 }
 
 

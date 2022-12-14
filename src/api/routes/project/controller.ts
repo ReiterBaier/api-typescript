@@ -15,19 +15,19 @@ export class projectController {
   @Get('/project/:id')
   @HttpCode(200)
   @OnUndefined(400)
-  getWithFilter(@Param('id') id: string) {
+  getById(@Param('id') id: string) {
     return findOne(id)
   }
 
   @Post('/project')
   @OnUndefined(400)
-  createProject(@Body({ "required": true, "validate": true}) projectCreation: projectValitador) {
+  postProject(@Body({ "required": true, "validate": true}) projectCreation: projectValitador) {
     return create(projectCreation)
   }
 
   @Patch('/project/:id')
   @OnUndefined(200)
-  updateProject(@Param('id') id: number, @Body() clientRequest: projectValitador) {
+  patchProject(@Param('id') id: number, @Body() clientRequest: projectValitador) {
     return update(clientRequest, id)
   }
 }

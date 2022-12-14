@@ -33,18 +33,49 @@ export const findOne = async (id: string) => {
 
 
 
+/*
 
 
-  /*
-  forEach não retorna dados
-  mesma sintaxe do map 
-  
-    const convertTask = tasks.map((task, index) => {
+export const save = async (project: Project, projectRequest: projectValitador, id?: number) => {
+  project.name = projectRequest.name
+  project.idClient = projectRequest.idClient
+  project.idPlataform = projectRequest.idPlataform
+  project.idType = projectRequest.idType
+  project.idUser = projectRequest.idUser
+  project.idStatus = projectRequest.idStatus
+  project.previousStartDate = projectRequest.previousStartDate
+  project.previousConclusionDate = projectRequest.previousConclusionDate
+  project.estimateTime = projectRequest.estimateTime
+  project.description = projectRequest.description
 
-    const convertDescription = Buffer.from(task.description).toString('utf-8')
+  const createdProject = await AppDatasource.manager.save(Project, project)
 
-    console.log(tasks[index])
+  return createdProject.id !== id ? { id: createdProject.id } : undefined
+}
 
-    return ({...task, description: convertDescription})
-  });
-  */
+
+export const create = async (projectRequest: projectValitador) => {
+  const project = new Project()
+
+  return save(project, projectRequest)
+}
+
+
+
+
+
+
+export const findOrNewInstance = async (id: number) => {
+const filter: FindOneOptions = { where: { id: id } }
+
+const foundedProject = await AppDatasource.manager.findOne(Project, filter)
+return foundedProject || new Project()
+}
+
+export const update = async (projectRequest: projectValitador, id: number) => {
+const project = await findOrNewInstance(id)
+return save(project, projectRequest)
+}
+
+*/
+

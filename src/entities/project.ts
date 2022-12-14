@@ -30,16 +30,16 @@ export class Project {
   creationDate: string
 
   @Column()
-  previousStartDate: string 
+  expectedStartDate: string 
 
   @Column({type: "date"})
   startDate: string 
 
   @Column({type: "date"})
-  previousConclusionDate: string 
+  expectedEndDate: string 
 
   @Column({type: "date"})
-  conclusionDate: string 
+  endDate: string 
 
   @Column()
   estimateTime: number 

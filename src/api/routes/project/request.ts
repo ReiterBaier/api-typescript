@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsDateString, IsInt, IsOptional, IsString, Length } from 'class-validator'
 
-/* Create a project  */
+
 export class projectValitador {
   @IsNotEmpty()
   @IsString()
@@ -33,15 +33,15 @@ export class projectValitador {
 
   @IsOptional()
   @IsDateString()
-  previousStartDate: string 
+  expectedStartDate: string 
 
   @IsOptional()
   @IsDateString()
-  previousConclusionDate: string 
+  expectedEndDate: string 
 
   @IsOptional()
   @IsDateString()
-  conclusionDate: string 
+  endDate: string 
 
   @IsOptional()
   @IsInt({ each: true })

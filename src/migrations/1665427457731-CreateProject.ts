@@ -46,7 +46,7 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "timestamp"
           },
           {
-            name: "previousStartDate",
+            name: "expectedStartDate",
             type: "date"
           },
           {
@@ -54,11 +54,11 @@ export default class CreateProject1665427457731 implements MigrationInterface {
             type: "date"
           },
           {
-            name: "previousConclusionDate",
+            name: "expectedEndDate",
             type: "date"
           },
           {
-            name: "conclusionDate",
+            name: "endDate",
             type: "date"
           },
           {

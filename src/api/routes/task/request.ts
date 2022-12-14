@@ -1,23 +1,56 @@
-/*import { ArrayUnique, IsArray, IsBoolean, IsInt, IsOptional, IsString } from 'class-validator'
+import { IsNotEmpty, IsDateString, IsInt, IsOptional, IsString, Length } from 'class-validator'
 
-export class createTravelValitador {
-  @IsOptional()
-  @IsBoolean()
-  isArray?: boolean
-
-  @IsOptional()
-  @IsBoolean()
-  showName?: boolean
+export class taskValitador {
+  @IsNotEmpty()
+  @IsString()
+  @Length(1,200)
+  name: string
 
   @IsOptional()
-  @IsBoolean()
-  controlByPosition?: boolean
+  @IsString()
+  description: Buffer
 
   @IsOptional()
-  @IsArray()
-  @ArrayUnique()
   @IsInt({ each: true })
-  @IsPositive({ each: true })
-  fields?: number[]
+  idMainTask: number
 
-*/
+  @IsOptional()
+  @IsInt({ each: true })
+  idProject: number
+
+  @IsNotEmpty()
+  @IsInt({ each: true })
+  idClient: number
+
+  @IsNotEmpty()
+  @IsInt({ each: true })
+  idPlataform: number
+
+  @IsNotEmpty()
+  @IsInt({ each: true })
+  idType: number
+
+  @IsNotEmpty()
+  @IsInt({ each: true })
+  idUser: number
+
+  @IsOptional()
+  @IsInt({ each: true })
+  idStatus: number
+
+  @IsOptional()
+  @IsDateString()
+  expectedStartDate: string 
+
+  @IsOptional()
+  @IsDateString()
+  expectedEndDate: string 
+
+  @IsOptional()
+  @IsDateString()
+  endDate: string 
+
+  @IsOptional()
+  @IsInt({ each: true })
+  estimateTime: number 
+}
