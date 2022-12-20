@@ -1,6 +1,7 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, Patch } from 'routing-controllers'
+import { JsonController, HeaderParam, Post, Param, HttpCode, OnUndefined, Get, Body, Patch } from 'routing-controllers'
 import { findAll, findOne, create, update } from './service'
 import { projectValitador } from './request'
+import { validateToken } from '../auth/jsonwebtoken/token-validator'
 
 
 @JsonController('/suportfy')
@@ -8,26 +9,38 @@ export class projectController {
   @Get('/project')
   @HttpCode(200)
   @OnUndefined(400)
-  getAll() {
+  getAll(@HeaderParam('authentication') token: string) {
+    if (!validateToken(token)) {
+      return new Error('error: Your token is not valid or has already expired')
+    } else
     return findAll()
   }
 
   @Get('/project/:id')
   @HttpCode(200)
   @OnUndefined(400)
-  getById(@Param('id') id: string) {
+  getById(@HeaderParam('authentication') token: string, @Param('id') id: string) {
+    if (!validateToken(token)) {
+      return new Error('error: Your token is not valid or has already expired')
+    } else
     return findOne(id)
   }
 
   @Post('/project')
   @OnUndefined(400)
-  postProject(@Body({ "required": true, "validate": true}) projectCreation: projectValitador) {
+  postProject(@HeaderParam('authentication') token: string, @Body({ "required": true, "validate": true }) projectCreation: projectValitador) {
+    if (!validateToken(token)) {
+      return new Error('error: Your token is not valid or has already expired')
+    } else
     return create(projectCreation)
   }
 
   @Patch('/project/:id')
   @OnUndefined(200)
-  patchProject(@Param('id') id: number, @Body() projectRequest: projectValitador) {
+  patchProject(@HeaderParam('authentication') token: string, @Param('id') id: number, @Body() projectRequest: projectValitador) {
+    if (!validateToken(token)) {
+      return new Error('error: Your token is not valid or has already expired')
+    } else
     return update(projectRequest, id)
   }
 }
