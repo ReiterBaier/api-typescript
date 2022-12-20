@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator'
+import { IsNotEmpty, IsString, MinLength } from 'class-validator'
 
 
 export class userValitador {
@@ -15,7 +15,7 @@ export class userValitador {
   @IsString()
   name: string
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   token: string
 }
