@@ -1,0 +1,1 @@
+export const tokenError = 'Token is invalid or already expired'
