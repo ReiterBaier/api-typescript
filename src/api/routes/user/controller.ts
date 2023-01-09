@@ -2,7 +2,7 @@ import { JsonController, HeaderParam, Post, Param, HttpCode, OnUndefined, Get, B
 import { findOne, findAll, create, update } from './service'
 import { userValitador } from './request'
 import { validateToken } from '../auth/jsonwebtoken/token-validator'
-import { tokenError } from '~/api/errors/token-error'
+import { tokenError } from '../../errors/token-error'
 import { Response } from 'express'
 
 
