@@ -11,7 +11,7 @@ export const makeToken = (user: User) => {
     let payload = {
         userID
     }
-    let token = jwt.sign(payload, 'suportfy',options);
+    let token = jwt.sign(payload, 'suportfy',options); /// Segundo parametro pode ser colocado em um .env
     saveTokenToDB(userID,token)
     return token
 }

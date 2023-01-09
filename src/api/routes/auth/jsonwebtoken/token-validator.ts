@@ -1,12 +1,13 @@
-import { isNumber } from 'class-validator'
 import * as jwt from 'jsonwebtoken'
 
 export const validateToken = (token: string): boolean => {
-    let isValid: boolean
-    let verify = jwt.verify(token, 'suportfy')
-    if (isNumber(verify.userID)) {
+    let isValid: boolean = false
+    try {
+        jwt.verify(token, 'suportfy')
         isValid = true
-    } else
+    } catch (error) {
         isValid = false
-    return isValid
+    } finally {
+        return isValid
+    }
 }
