@@ -1,20 +1,15 @@
-import { JsonController,HeaderParam, HttpCode, OnUndefined, Get, Res, UnauthorizedError } from 'routing-controllers'
+import { JsonController, HttpCode, OnUndefined, Get, UseBefore } from 'routing-controllers'
 import { findAll } from './service'
 import { validateToken } from '../auth/jsonwebtoken/token-validator'
-import { Response } from 'express'
-import { tokenError } from '../../errors/token-error'
 
 @JsonController('/suportfy')
 export class getAllProjectStage {
+  @UseBefore(validateToken)
+
   @Get('/projectStage')
   @HttpCode(200)
   @OnUndefined(400)
-  getAll(@HeaderParam('authentication') token: string, @Res() response: Response) {
-    if (!validateToken(token)) {
-      return response
-        .status(401)
-        .send(new UnauthorizedError(tokenError))
-    } else
+  getAll() {
     return findAll()
   }
 }
