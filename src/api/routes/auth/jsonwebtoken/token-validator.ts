@@ -14,3 +14,13 @@ export function validateToken(request: Request, response: Response, next?: NextF
         .send(new UnauthorizedError(tokenError))
     }
 }
+
+export function myToken(token: string): any {
+    try {
+        const decodedToken = jwt.verify(token, 'suportfy')
+        const userID = decodedToken.userID
+        return userID
+    } catch (error) {
+        return false
+    }
+}
