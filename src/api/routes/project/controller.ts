@@ -1,9 +1,12 @@
-import { JsonController, HeaderParam, Post, Param, HttpCode, OnUndefined, Get, Body, Patch, Res, UnauthorizedError } from 'routing-controllers'
+import { JsonController, HeaderParam, Post, Param, HttpCode, OnUndefined, Get, Body, Patch, Res, UnauthorizedError, UseBefore } from 'routing-controllers'
 import { findAll, findOne, create, update } from './service'
 import { projectValitador } from './request'
+import { validateToken } from '../auth/jsonwebtoken/token-validator'
 
 @JsonController('/suportfy')
 export class projectController {
+  @UseBefore(validateToken)
+    
   @Get('/project')
   @HttpCode(200)
   @OnUndefined(400)
