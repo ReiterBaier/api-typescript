@@ -1,12 +1,9 @@
-import { JsonController,Param, HttpCode, OnUndefined, Get, Post, Patch, Body, UseBefore} from 'routing-controllers'
+import { JsonController, HeaderParam,Param, HttpCode, OnUndefined, Get, Post, Patch, Body, UnauthorizedError, Res} from 'routing-controllers'
 import { findAll, findOne, create, update} from './service'
 import { stageValitador } from './request'
-import { validateToken } from '../auth/jsonwebtoken/token-validator'
 
 @JsonController('/suportfy')
 export class stageController {
-  @UseBefore(validateToken)
-    
   @Get('/stage')
   @HttpCode(200)
   @OnUndefined(400)
