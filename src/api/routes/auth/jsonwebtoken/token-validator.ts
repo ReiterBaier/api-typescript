@@ -1,13 +1,16 @@
 import * as jwt from 'jsonwebtoken'
+import { Request, Response, NextFunction } from 'express'
+import { UnauthorizedError } from 'routing-controllers'
+import { tokenError } from '../../../errors/token-error'
 
-export const validateToken = (token: string): boolean => {
-    let isValid: boolean = false
+export function validateToken(request: Request, response: Response, next?: NextFunction): any {
+    const token = request.headers.authentication
     try {
         jwt.verify(token, 'suportfy')
-        isValid = true
+        next()
     } catch (error) {
-        isValid = false
-    } finally {
-        return isValid
+        return response
+        .status(401)
+        .send(new UnauthorizedError(tokenError))
     }
 }
