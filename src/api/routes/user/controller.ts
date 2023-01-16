@@ -1,4 +1,4 @@
-import { JsonController, Post, Param, HttpCode, OnUndefined, Get, Body, Patch, UseBefore} from 'routing-controllers'
+import { JsonController, HeaderParam, Post, Param, HttpCode, OnUndefined, Get, Body, Patch, UnauthorizedError, Res, UseBefore, Req} from 'routing-controllers'
 import { findOne, findAll, create, update } from './service'
 import { userValitador } from './request'
 import { validateToken } from '../auth/jsonwebtoken/token-validator'
@@ -29,7 +29,6 @@ export class userController {
 
   @Patch('/user/:id')
   @OnUndefined(200)
-  @UseBefore(validateToken)
   patchUser( @Param('id') id: number, @Body() userRequest: userValitador) {
     return update(userRequest, id)
   }
