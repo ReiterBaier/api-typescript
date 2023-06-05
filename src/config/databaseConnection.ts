@@ -7,11 +7,11 @@ const migrationsPath = path.resolve(__dirname, '..', 'migrations', '*')
 
 export const AppDatasource = new DataSource({
   type: 'mariadb',
-  database: 'fsis_project',
-  host: 'fsis-db-master.cn30ieaycffi.us-east-1.rds.amazonaws.com',
-  port: 9631,
-  username: 'admin',
-  password: 'dY&^3ODl^glej!Ot6YiK',
+  database: 'database_name',
+  host: 'put_the_host_here',
+  port: 0,
+  username: 'username',
+  password: 'password',
   entities: [entitiesPath],
   migrations: [migrationsPath]
 })
